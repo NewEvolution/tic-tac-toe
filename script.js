@@ -18,11 +18,15 @@ var winArray = [$topRow, $middleRow, $bottomRow,
 
 var winCheck = function(color){
   var inArow = 0; // how many of each player's boxes in a row
+  var isAdraw = 0; // count to check for a draw
   for(var f=0; f<winArray.length; f++) { // for every case in the array of winning cases
     for(var i=0; i<winArray[f].length; i++) { // go through and check the boxes 
       if($(winArray[f][i]).hasClass(color) === true) { // if that box has the sent color
         inArow++; // add to the in-a-row count
         console.log(color, inArow);
+      }
+      if($(winArray[f][i]).hasClass("selected") === true) { // if that box is selected
+        isAdraw++; // add to the draw count
       }
     }
     if(inArow === 3) { // 3 in a row is a WINNER!
@@ -31,6 +35,13 @@ var winCheck = function(color){
       break;
     } else {
       inArow = 0;
+    }
+    if(isAdraw === 9) { // all 9 selected is a draw =()
+      $resetButton.removeClass("hidden");  // reveal the reset button
+      alert("It's a draw, you're not very good at this..."); // tell them they kinda suck
+      break;
+    } else {
+      isAdraw = 0;
     }
   }
 };

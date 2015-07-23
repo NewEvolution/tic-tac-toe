@@ -37,7 +37,7 @@ $allGameBoxes.mouseleave(function(){
 
 // set the clicked box to the player color & switch colors,
 $allGameBoxes.click(function(event) {
-  event.disableDefault();
+  event.preventDefault();
   var clickedBox = $(this);
   if(clickedBox.hasClass("selected") === false) { // make sure the box isn't taken
     clickedBox.addClass(color + " selected");

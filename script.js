@@ -25,9 +25,6 @@ var winCheck = function(color){
         inArow++; // add to the in-a-row count
         console.log(color, inArow);
       }
-      if($(winArray[f][i]).hasClass("selected") === true) { // if that box is selected
-        isAdraw++; // add to the draw count
-      }
     }
     if(inArow === 3) { // 3 in a row is a WINNER!
       $resetButton.removeClass("hidden");  // reveal the reset button
@@ -35,13 +32,6 @@ var winCheck = function(color){
       break;
     } else {
       inArow = 0;
-    }
-    if(isAdraw === 9) { // all 9 selected is a draw =()
-      $resetButton.removeClass("hidden");  // reveal the reset button
-      alert("It's a draw, you're not very good at this..."); // tell them they kinda suck
-      break;
-    } else {
-      isAdraw = 0;
     }
   }
 };

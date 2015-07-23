@@ -1,4 +1,51 @@
 .hidden {
   display: none;
 }
+/* set size of squares */
+td {
+	width: 100px;
+	height: 100px;
+}
 
+thead {
+	text-align: center;
+}
+
+/* create grid */
+
+.top > .one {
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+
+}
+
+.top > .two {
+	border-bottom: 2px solid black;
+}
+
+.top > .three {
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+}
+
+.middle > .one {
+	border-right: 2px solid black;
+}
+
+.middle > .three {
+	border-left: 2px solid black;
+}
+
+.bottom > .one {
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+}
+
+.bottom > .two {
+	border-top: 2px solid black;
+}
+
+.bottom > .three {
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+}

@@ -25,16 +25,21 @@ var winCheck = function(color){
 
 $allGameBoxes = $("tbody td");
 
-//set the pointer to look clickable when you mouse over a game box
+// set the pointer to look clickable when you mouse over a game box
 $allGameBoxes.mouseenter(function(){
   $("body").css("cursor", "pointer");
+});
+
+// turn the clickable pointer back off
+$allGameBoxes.mouseleave(function(){
+  $("body").css("cursor", "default");
 });
 
 // set the clicked box to the player color & switch colors,
 $allGameBoxes.click(function(event) {
   event.disableDefault();
   var clickedBox = $(this);
-  if(clickedBox.hasClass("selected") === false) { //make sure the box isn't taken
+  if(clickedBox.hasClass("selected") === false) { // make sure the box isn't taken
     clickedBox.addClass(color + " selected");
     if(color === "red") {
       color = "blue";

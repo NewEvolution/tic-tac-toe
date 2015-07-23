@@ -49,3 +49,11 @@ thead {
 	border-top: 2px solid black;
 	border-left: 2px solid black;
 }
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}

@@ -40,11 +40,11 @@ var winCheck = function(color){
 
 
   for(var j=0; j<$allGameBoxes.length; j++) {
-    if($($allGameBoxes[j]).hasClass("selected") === true && inArow !== 3){ // if that box is selected
+    if($($allGameBoxes[j]).hasClass("selected") === true){ // if that box is selected
       isAdraw++;
     }
   }
-  if(isAdraw === 9) { // all 9, no win
+  if(isAdraw === 9 && inArow !== 3) { // all 9, no win
     $resetButton.removeClass("hidden");  // reveal the reset button
     alert("It's a draw.  You're kind of bad at this."); // tell them they suck  
   } else {

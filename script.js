@@ -12,7 +12,7 @@ var $diagOne = [$(".top .one"), $(".middle .two"), $(".bottom .three")];
 var $diagTwo = [$(".top .three"), $(".middle .two"), $(".bottom .one")];
 
 // every clickable box
-var $allGameBoxes = $("tbody td");
+var $allGameBoxes = $("tbody tr td");
 
 // all possible winning cases stored in an array
 var winArray = [$topRow, $middleRow, $bottomRow, 
@@ -36,19 +36,21 @@ var winCheck = function(color){
     } else {
       inArow = 0;
     }
-  }
+  };
+
+
   for(var j=0; j<$allGameBoxes.length; j++) {
-    if($($allGameBoxes[i]).hasClass("selected") === true) { // if that box is selected
+    if($($allGameBoxes[j]).hasClass("selected") === true && inArow !== 3){ // if that box is selected
       isAdraw++;
     }
   }
   if(isAdraw === 9) { // all 9, no win
     $resetButton.removeClass("hidden");  // reveal the reset button
-    alert("It's a draw.  You'r kind of bad at this."); // tell them they suck
+    alert("It's a draw.  You're kind of bad at this."); // tell them they suck  
   } else {
     isAdraw = 0;
   }
-};
+}
 
 // set the pointer to look clickable when you mouse over a game box
 $allGameBoxes.mouseenter(function(){
